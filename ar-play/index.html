@@ -12,7 +12,7 @@
         <a-scene embedded vr-mode-ui="enabled: false" arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
 
         <a-assets>
-            <video id="animated-asset" src="www.youtube.com/watch?v=KAoPwkM-3RE"></video>
+            <video id="animated-asset" src="vid1.mp4" preload="auto"></video>
             <!-- <a-asset-item id="animated-asset" src="https://raw.githubusercontent.com/nicolocarpignoli/nicolocarpignoli.github.io/master/ar-playground/models/CesiumMan.gltf"></a-asset-item> -->
         </a-assets>
 
@@ -21,11 +21,12 @@
         </a-marker>
 
         <a-marker id="animated-marker" type='barcode' value='6'>
-            <a-entity
+            <!-- <a-entity
                 animation-mixer
                 gltf-model="#animated-asset"
                 scale="2 2 2">
-            </a-entity>
+            </a-entity> -->
+            <a-entity geometry="primitive: plane" material="src: #animated-asset"></a-entity>
         </a-marker>
 
         <a-entity camera></a-entity>
